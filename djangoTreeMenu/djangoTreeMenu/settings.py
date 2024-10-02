@@ -79,7 +79,7 @@ DATABASES = {
         "NAME": "djangoTreeMenu",
         "USER": "postgres",
         "PASSWORD": "postgres",
-        # "HOST": "db",
+        "HOST": "0.0.0.0",
         "PORT": "5432",
     }
 }
