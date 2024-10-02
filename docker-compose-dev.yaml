@@ -14,6 +14,21 @@ services:
     volumes:
       - app:/data/djangotreemenu
 
+  app:
+    container_name: djangotreemenu-app
+    build:
+      context: .
+      dockerfile: ./dockerfile
+    depends_on:
+      - db
+    command: ["/app/scripts/dockerstart.sh"]
+    ports:
+      - "8000:8000"
+    networks:
+      - app-network
+    volumes:
+      - app:/data/djangotreemenu-app
+
 networks:
   app-network:
     driver: bridge
